@@ -1,1 +1,1 @@
-# UI5_walkthrought
+# UI5_walkthrough
