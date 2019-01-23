@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast"
-	], function(Controller,MessageToast){
+	"sap/m/MessageToast",
+	"sap/ui/model/json/JSONModel",
+	], function(Controller,MessageToast,JSONModel){
 		"use strict";
 // The "use strict"; literal expression was introduced by JavaScript 1.8.5 
 // (ECMAScript 5). It tells the browser to execute the code in a so called 
@@ -11,6 +12,16 @@ sap.ui.define([
 // common JavaScript pitfalls and it’s therefore a good practice to use strict mode.
 
 		return Controller.extend("sap.ui.demo.walkthrough.controller.App",{
+			onInit: function(){
+				// set data model on view
+				var oData = { recipient:{
+					name:"World"
+				}
+			}; 
+			var oModel = new JSONModel(oData);
+			this.getView().setModel(oModel);
+			},
+			
 			onShowHello: function() {
 				MessageToast.show("Hello World");
 			}
