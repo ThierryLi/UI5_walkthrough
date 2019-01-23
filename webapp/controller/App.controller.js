@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-	], function(Controller){
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageToast"
+	], function(Controller,MessageToast){
 		"use strict";
 // The "use strict"; literal expression was introduced by JavaScript 1.8.5 
 // (ECMAScript 5). It tells the browser to execute the code in a so called 
@@ -11,8 +12,7 @@ sap.ui.define([
 
 		return Controller.extend("sap.ui.demo.walkthrough.controller.App",{
 			onShowHello: function() {
-				// Show a native javascript alert
-				alert("Hello World");
+				MessageToast.show("Hello World");
 			}
 		});
 	});
